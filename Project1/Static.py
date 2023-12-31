@@ -30,3 +30,11 @@ obj.print_static_variable()
 
 # Access static variable through the class and change within the class
 MyClass.change_static_variable()
+
+'''
+OUTPUT : 
+Accessing static variable through the class: Static Variable
+Accessing static variable through the instance: Static Variable
+Accessing static variable within instance: Changed within the instance
+Accessing static variable within the class: Changed within the class
+'''
