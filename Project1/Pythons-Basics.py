@@ -27,16 +27,16 @@ print("Double Variable:", double_variable)
 # 4 Define Local and Global Variables with the Same Name and Print Both Variables to Understand the Scope:
 
 # Global variable
-global_variable = "I am global"
+variable = "I am global"
 
-def scope_example():
+def funct():
     # Local variable with the same name as the global variable
-    global_variable = "I am local"
-    print("Inside the function - Local Variable:", global_variable)
-scope_example()
+    variable = "I am local"
+    print("Inside the function - Local Variable:", variable)
+funct()
 
 # Print global variable outside the function
-print("Outside the function - Global Variable:", global_variable)
+print("Outside the function - Global Variable:", variable)
 
 
 #Output
