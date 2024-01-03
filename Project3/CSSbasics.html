@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jala Academy</title>
+
+    <!-- CSS comments -->
+    <style>
+        /* Pseudo-classes and Pseudo-elements */
+        /* Styling for anchor on hover */
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+
+        /* Styling the first line of a paragraph */
+        p::first-line {
+            font-weight: bold;
+        }
+
+        /* Adding content before a span */
+        span::before {
+            content: "Start: ";
+        }
+
+        /* Adding content after a span */
+        span::after {
+            content: "; End.";
+        }
+
+        /* Background styles */
+        body {
+            background-color: lightblue;
+            background-image: url('your-image.jpg');
+            background-attachment: fixed; /* Image doesn't scroll with the page */
+            background-size: cover; /* Adjusts the size of the background image to cover the entire page */
+        }
+
+        /* Border styles */
+        div {
+            border-top: 5px dotted red;
+            border-right: 10px dashed green;
+            border-bottom: 15px double blue;
+            border-left: 20px solid orange;
+            padding: 20px;
+        }
+
+        /* Size styles */
+        div.size-example {
+            height: 200px;
+            width: 50%;
+            background-color: lightgray;
+        }
+
+        p.size-example {
+            height: 100%;
+            width: 300px;
+            background-color: lightblue;
+        }
+
+        body.font-example {
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1.font-example {
+            font-size: 32px;
+            font-weight: bold;
+            color: navy;
+            text-align: center;
+        }
+
+        p.font-example {
+            font-size: 18px;
+            font-style: italic;
+            color: darkgreen;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body class="font-example">
+    <h1 class="font-example">Title Heading</h1>
+
+    <p class="font-example">
+        This is a sample paragraph with different font styles, sizes, families, colors, and text-align.
+        Adjust the styles according to your preferences.
+    </p>
+
+    <div class="size-example">
+        <!-- Div with specified height and width -->
+    </div>
+
+    <p class="size-example">
+        <!-- Paragraph with specified height and width -->
+    </p>
+
+    <div>
+        <!-- Content with different border styles -->
+    </div>
+
+    <a href="#section2">Go to Section 2</a>
+
+    <ul>
+        <li>  Item 1</li>
+        <li>  Item 2</li>
+        <li>  Item 3</li>
+    </ul>
+
+    <label for="inputField">Input Field:</label>
+    <input type="text" id="inputField">
+
+    <blockquote>blockquote.</blockquote>
+
+    <hr>
+
+    <img src="your-image.jpg" alt="Your Image">
+
+    <div id="section2">
+        <h2>Section 2</h2>
+        <p>This is the second section of your page.</p>
+    </div>
+</body>
+
+</html>
