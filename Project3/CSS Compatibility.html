@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page with JavaScript</title>
+    <style>
+        /* Additional styles for better visualization */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+            border-collapse: collapse;
+            padding: 8px;
+            text-align: left;
+        }
+
+        /* 1. Create a table and apply table-layout as fixed and none */
+        .table-fixed {
+            table-layout: fixed;
+        }
+
+        .table-none {
+            table-layout: none;
+        }
+
+        /* 2. Create a list and change its list-style-type */
+        .custom-list {
+            list-style-type: circle;
+        }
+
+        /* 3. Create a grid with different types */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .grid-item {
+            background-color: #ddd;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* 4. Create a hero image */
+        .hero-image {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 5. Viewport for grid, media queries, image, and video */
+        @media screen and (max-width: 600px) {
+            /* Adjust styles for small screens */
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. Create a table and apply table-layout as fixed and none -->
+    <h2>1. Table with Fixed and None Layout</h2>
+    <table class="table-fixed">
+        <caption>Fixed Layout</caption>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+            <td>Row 1, Cell 3</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+            <td>Row 2, Cell 3</td>
+        </tr>
+    </table>
+
+    <table class="table-none">
+        <caption>None Layout</caption>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+            <td>Row 1, Cell 3</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+            <td>Row 2, Cell 3</td>
+        </tr>
+    </table>
+
+    <!-- 2. Create a list and change its list-style-type -->
+    <h2>2. Custom List</h2>
+    <ul class="custom-list">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ul>
+
+    <!-- 3. Create a grid with different types -->
+    <h2>3. Grid with Different Types</h2>
+    <div class="grid-container">
+        <div class="grid-item">Grid Item 1</div>
+        <div class="grid-item">Grid Item 2</div>
+        <div class="grid-item">Grid Item 3</div>
+        <div class="grid-item">Grid Item 4</div>
+        <div class="grid-item">Grid Item 5</div>
+        <div class="grid-item">Grid Item 6</div>
+    </div>
+
+    <!-- 4. Create a hero image -->
+    <h2>4. Hero Image</h2>
+    <div class="hero-image">
+        <div class="hero-text">
+          <h1>I am CHIRAG</h1>
+          <p>And I'm a Web Developer</p>
+          <button>Hire me</button>
+        </div>
+      </div>
+
+    <!-- 5. Viewport for grid, media queries, image, and video -->
+    <h2>5. Viewport Adjustments</h2>
+    <p>This section adjusts styles based on the viewport width (max-width: 600px).</p>
+
+</body>
+
+</html>
