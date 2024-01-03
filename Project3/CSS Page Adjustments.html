@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page with Styling</title>
+    <style>
+        /* 1. Black border for the table and change color on hover */
+        table {
+            border: 2px solid black;
+            transition: background-color 0.5s;
+        }
+
+        table:hover {
+            background-color: rgb(211, 196, 24);
+        }
+
+        /* 2. Different visibility and display types */
+        .element-visibility {
+            visibility: hidden;
+        }
+
+        .element-visible {
+            visibility: visible;
+        }
+
+        .element-collapse {
+            visibility: collapse;
+        }
+
+        .element-display-none {
+            display: none;
+        }
+
+        .element-display-inline {
+            display: inline;
+        }
+
+        .element-display-block {
+            display: block;
+        }
+
+        .element-display-contents {
+            display: contents;
+        }
+
+        .element-display-list-item {
+            display: list-item;
+        }
+
+        /* 3. Smooth scroll to top and bottom */
+        #scrollToTop,
+        #scrollToBottom {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            display: none;
+        }
+
+        /* 4. Padding and margin with different sizes */
+        .box {
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .box-large-padding {
+            padding: 40px;
+        }
+
+        .box-large-margin {
+            margin: 30px;
+        }
+
+        /* 5. Multiple background images with adjustable sizes */
+        .background-images {
+            height: 300px;
+            background-image: url('image1.jpg'), url('image2.jpg');
+            background-size: auto, cover;
+            background-position: top left, bottom right;
+            background-repeat: no-repeat, repeat;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. Table with black border -->
+    <table>
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+        </tr>
+    </table>
+
+    <!-- 2. Different visibility and display types -->
+    <div class="element-visibility">Hidden Element</div>
+    <div class="element-visible">Visible Element</div>
+    <div class="element-collapse">Collapse Element</div>
+
+    <div class="element-display-none">Display None</div>
+    <span class="element-display-inline">Display Inline</span>
+    <div class="element-display-block">Display Block</div>
+    <div class="element-display-contents">Display Contents</div>
+    <ol class="element-display-list-item">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ol>
+
+    <!-- 3. Scroll to top and bottom -->
+    <button id="scrollToTop">Click to go to top of page</button>
+    <button id="scrollToBottom">Click to go to bottom of page</button>
+
+    <!-- 4. Padding and margin with different sizes -->
+    <div class="box">Box with default padding and margin</div>
+    <div class="box box-large-padding">Box with large padding</div>
+    <div class="box box-large-margin">Box with large margin</div>
+
+    <!-- 5. Multiple background images with adjustable sizes -->
+    <div class="background-images">Content with multiple background images</div>
+
+    <script>
+        // 3. Smooth scroll to top and bottom
+        document.getElementById('scrollToTop').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        document.getElementById('scrollToBottom').addEventListener('click', function () {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        });
+
+        // Show scroll buttons when scrolling
+        window.addEventListener('scroll', function () {
+            var scrollToTopButton = document.getElementById('scrollToTop');
+            var scrollToBottomButton = document.getElementById('scrollToBottom');
+
+            if (window.scrollY > 100) {
+                scrollToTopButton.style.display = 'block';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
+
+            if (window.scrollY + window.innerHeight < document.body.scrollHeight - 100) {
+                scrollToBottomButton.style.display = 'block';
+            } else {
+                scrollToBottomButton.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
