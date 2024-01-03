@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        section {
+            border: 2px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. Web Page with Non-Semantic Elements <div> and <span> -->
+    <div>
+        <h1>Non-Semantic Elements</h1>
+        <div>This is a non-semantic div element.</div>
+        <span>This is a non-semantic span element.</span>
+    </div>
+
+    <!-- 2. Web Page with Semantic Elements <form>, <table>, and <article> -->
+    <form>
+        <h1>Semantic Elements</h1>
+        <article>
+            <h2>Article Title</h2>
+            <p>This is a semantic article element.</p>
+            <aside>
+                <h3>Related Content</h3>
+                <p>Content in the aside element.</p>
+            </aside>
+        </article>
+        <table>
+            <caption>Table Caption</caption>
+            <thead>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Row 1, Cell 1</td>
+                    <td>Row 1, Cell 2</td>
+                </tr>
+                <tr>
+                    <td>Row 2, Cell 1</td>
+                    <td>Row 2, Cell 2</td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <!-- 3. Web Page with All HTML5 Tags -->
+    <section>
+        <h1>All HTML5 Tags</h1>
+        <article>
+            <hgroup>
+                <h1>Main Heading</h1>
+                <h2>Subheading</h2>
+            </hgroup>
+            <p>Content within the article.</p>
+            <figure>
+                <img src="image.jpg" alt="Image Description">
+                <figcaption>Image Caption</figcaption>
+            </figure>
+            <time datetime="2022-01-01">January 1, 2022</time>
+            <mark>Highlighted Text</mark>
+        </article>
+        <section>
+            <h2>Subsection</h2>
+            <nav>
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                </ul>
+            </nav>
+        </section>
+        <aside>
+            <p>Content in the aside element.</p>
+        </aside>
+        <footer>
+            <p>Page Footer</p>
+        </footer>
+    </section>
+
+</body>
+
+</html>
