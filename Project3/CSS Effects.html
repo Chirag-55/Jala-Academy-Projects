@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Styling Example</title>
+    <style>
+        /* 1. CSS Shadow Effects for Image Box and Hover Cursor */
+        .image-box {
+            width: 300px;
+            height: 200px;
+            background-color: #f0f0f0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-box:hover {
+            box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        /* 2. CSS Animations and Paginations */
+        .animation-example {
+            width: 100px;
+            height: 100px;
+            background-color: coral;
+            animation-name: exampleAnimation;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-delay: 1s;
+            margin: 20px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+        }
+
+        @keyframes exampleAnimation {
+            0% {
+                background-color: coral;
+            }
+
+            50% {
+                background-color: lightblue;
+            }
+
+            100% {
+                background-color: coral;
+            }
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        .pagination li {
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: lightgray;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination li:hover {
+            background-color: darkgray;
+        }
+
+        /* 3. CSS Positions */
+        .position-example {
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            margin: 20px;
+        }
+
+        .static {
+            position: static;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .absolute {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 20px;
+        }
+
+        /* 4. Handling Overflow using Scroll */
+        .overflow-example {
+            width: 200px;
+            height: 100px;
+            background-color: lightcoral;
+            overflow: scroll;
+        }
+
+        /* 5. Adding Opacity to an Image */
+        .image-opacity {
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-opacity:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. CSS Shadow Effects for Image Box and Hover Cursor -->
+    <div class="image-box">
+        <img src="your-image.jpg" alt="Image">
+    </div>
+
+    <!-- 2. CSS Animations and Paginations -->
+    <div class="animation-example">Animate Me</div>
+
+    <!-- Pagination -->
+    <ul class="pagination">
+        <li>Page 1</li>
+        <li>Page 2</li>
+        <li>Page 3</li>
+    </ul>
+
+    <!-- 3. CSS Positions -->
+    <div class="position-example static">Static</div>
+    <div class="position-example relative">Relative</div>
+    <div class="position-example fixed">Fixed</div>
+    <div class="position-example absolute">Absolute</div>
+    <div class="position-example sticky">Sticky</div>
+
+    <!-- 4. Handling Overflow using Scroll -->
+    <div class="overflow-example">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non justo ac ipsum efficitur ullamcorper ut
+        nec ligula.
+    </div>
+
+    <!-- 5. Adding Opacity to an Image -->
+    <img class="image-opacity" src="your-image.jpg" alt="Image with Opacity">
+
+</body>
+
+</html>
