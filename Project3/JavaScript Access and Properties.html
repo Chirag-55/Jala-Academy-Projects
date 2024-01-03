@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Program</title>
+</head>
+
+<body>
+
+    <!-- 1. Using `this` keyword to make a button disappear -->
+    <button onclick="hideButton()">Click me to disappear</button>
+
+    <!-- 2. Invoking a function using `call()` and `apply()`, spotting the difference -->
+    <script>
+        function greet(message) {
+            console.log(message + ' ' + this.name);
+        }
+
+        var person1 = { name: 'Alice' };
+        var person2 = { name: 'Bob' };
+
+        // Using call()
+        greet.call(person1, 'Hello'); // Output: Hello Alice
+
+        // Using apply()
+        greet.apply(person2, ['Greetings']); // Output: Greetings Bob
+    </script>
+
+    <!-- 3. Program for COUNTER -->
+    <button onclick="incrementCounter()">Count</button>
+    <p id="counterValue">0</p>
+
+    <script>
+        var counter = 0;
+
+        function incrementCounter() {
+            counter++;
+            document.getElementById('counterValue').innerText = counter;
+        }
+    </script>
+
+    <!-- 4. Create a Counter with the help of getter and setter accessors -->
+    <p>Counter using getter and setter:</p>
+    <p id="counterGetterSetter"></p>
+
+    <script>
+        var counterValue = 0;
+
+        Object.defineProperty(window, 'counterGetterSetter', {
+            get: function () {
+                return counterValue;
+            },
+            set: function (value) {
+                counterValue = value;
+                document.getElementById('counterGetterSetter').innerText = counterValue;
+            }
+        });
+    </script>
+
+    <!-- 5. Adding more properties to an existing function using object prototypes -->
+    <script>
+        function ExampleFunction() {
+            this.property1 = 'Value 1';
+            this.property2 = 'Value 2';
+        }
+
+        // Adding more properties using prototype
+        ExampleFunction.prototype.property3 = 'Value 3';
+
+        // Creating an instance of ExampleFunction
+        var exampleInstance = new ExampleFunction();
+
+        console.log(exampleInstance.property1); // Output: Value 1
+        console.log(exampleInstance.property2); // Output: Value 2
+        console.log(exampleInstance.property3); // Output: Value 3
+    </script>
+
+</body>
+
+</html>
