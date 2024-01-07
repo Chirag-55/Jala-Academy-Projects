@@ -13,7 +13,7 @@ public class RadioButtonCheckBoxExample {
         WebDriver driver = new FirefoxDriver();
 
         // Open the webpage containing radio buttons and checkboxes
-        driver.get("http://example.com");
+        driver.get("http://magnus.jalatechnologies.com/");
 
         // 1. Selecting the Radio Button by Label Text / Value
         selectRadioButton(driver, "Option 1");
