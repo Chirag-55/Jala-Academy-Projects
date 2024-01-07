@@ -12,7 +12,7 @@ public class TextBoxActionsExample {
         WebDriver driver = new FirefoxDriver();
 
         // Open the webpage containing the text box
-        driver.get("http://example.com");
+        driver.get("http://magnus.jalatechnologies.com/");
 
         // Locate the text box by its ID
         WebElement textBox = driver.findElement(By.id("textboxId"));
