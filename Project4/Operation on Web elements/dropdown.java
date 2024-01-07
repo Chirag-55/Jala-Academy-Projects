@@ -4,9 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.List;
-
-public class DropDownExample {
+public class DropdownExamples {
     public static void main(String[] args) {
         // Set the path of the geckodriver executable
         System.setProperty("webdriver.gecko.driver", "path/to/geckodriver");
@@ -14,71 +12,48 @@ public class DropDownExample {
         // Initialize the Firefox driver
         WebDriver driver = new FirefoxDriver();
 
-        // Open the webpage containing the dropdown
+        // Open the Magnus application site
         driver.get("http://magnus.jalatechnologies.com/");
 
-        // Locate the dropdown element by its ID
-        WebElement dropdown = driver.findElement(By.id("dropdownId"));
+        // Perform login
+        WebElement usernameField = driver.findElement(By.id("username"));
+        WebElement passwordField = driver.findElement(By.id("password"));
+        WebElement loginButton = driver.findElement(By.id("loginBtn"));
 
-        // Wrap the dropdown element with Select class
-        Select select = new Select(dropdown);
+        usernameField.sendKeys("training@jalaacademy.com");
+        passwordField.sendKeys("jobprogram");
+        loginButton.click();
+
+        // Navigate to the dropdown page
+        driver.findElement(By.linkText("Dropdown")).click();
+
+        // Locate the dropdown element
+        WebElement dropdown = driver.findElement(By.id("dropdown"));
+
+        // Example Dropdown interactions:
 
         // 1. Print all the options available in the dropdown
-        printAllDropdownOptions(select);
+        Select selectDropdown = new Select(dropdown);
+        System.out.println("Options in the Dropdown:");
 
-        // 2. Print the first selected option from the dropdown
-        printFirstSelectedOption(select);
+        for (WebElement option : selectDropdown.getOptions()) {
+            System.out.println(option.getText());
+        }
 
-        // 3. Select an option by value from the dropdown
-        selectOptionByValue(select, "optionValue");
+        // 2. Print the first selected option from a dropdown
+        WebElement firstSelectedOption = selectDropdown.getFirstSelectedOption();
+        System.out.println("First Selected Option: " + firstSelectedOption.getText());
 
-        // 4. Select an option by visible text from the dropdown
-        selectOptionByText(select, "Option Text");
+        // 3. Select an option by value from a dropdown
+        selectDropdown.selectByValue("optionValue");
 
-        // 5. Select an option by index from the dropdown
-        selectOptionByIndex(select, 2);
+        // 4. Select an option by visible text from a dropdown
+        selectDropdown.selectByVisibleText("Option Text");
+
+        // 5. Select an option by index from a dropdown
+        selectDropdown.selectByIndex(2);
 
         // Close the browser
         driver.quit();
-    }
-
-    private static void printAllDropdownOptions(Select select) {
-        // Get all options from the dropdown
-        List<WebElement> options = select.getOptions();
-
-        // Print each option's text
-        System.out.println("All Options in the Dropdown:");
-        for (WebElement option : options) {
-            System.out.println(option.getText());
-        }
-    }
-
-    private static void printFirstSelectedOption(Select select) {
-        // Get the first selected option from the dropdown
-        WebElement firstSelectedOption = select.getFirstSelectedOption();
-
-        // Print the text of the first selected option
-        System.out.println("First Selected Option: " + firstSelectedOption.getText());
-    }
-
-    private static void selectOptionByValue(Select select, String value) {
-        // Select an option by its value
-        select.selectByValue(value);
-
-        System.out.println("Option with value '" + value + "' selected.");
-    }
-
-    private static void selectOptionByText(Select select, String visibleText) {
-        // Select an option by its visible text
-        select.selectByVisibleText(visibleText);
-
-        System.out.println("Option with text '" + visibleText + "' selected.");
-    }
-
-    private static void selectOptionByIndex(Select select, int index) {
-        // Select an option by its index
-        select.selectByIndex(index);
-
-        System.out.println("Option at index " + index + " selected.");
     }
 }
