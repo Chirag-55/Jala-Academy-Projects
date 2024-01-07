@@ -14,7 +14,7 @@ public class LinkActionsExample {
         WebDriver driver = new FirefoxDriver();
 
         // Open the webpage containing links
-        driver.get("http://example.com");
+        driver.get("http://magnus.jalatechnologies.com/m");
 
         // 1. Clicking a link using partialLinkText
         clickLinkByPartialText(driver, "Partial Link");
