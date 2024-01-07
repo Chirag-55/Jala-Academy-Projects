@@ -15,7 +15,7 @@ public class DropDownExample {
         WebDriver driver = new FirefoxDriver();
 
         // Open the webpage containing the dropdown
-        driver.get("http://example.com");
+        driver.get("http://magnus.jalatechnologies.com/");
 
         // Locate the dropdown element by its ID
         WebElement dropdown = driver.findElement(By.id("dropdownId"));
