@@ -12,7 +12,7 @@ public class XPathExamples {
         WebDriver driver = new FirefoxDriver();
 
         // Open the webpage for XPath examples
-        driver.get("http://example.com/xpath");
+        driver.get("http://magnus.jalatechnologies.com/");
 
         // 1. Read label text and its color
         readLabelTextAndColor(driver);
