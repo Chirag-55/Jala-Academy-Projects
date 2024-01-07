@@ -3,11 +3,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.List;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-public class SeleniumMethodsExample {
+public class MagnusWebDriverExample {
     public static void main(String[] args) {
         // Set the path of the geckodriver executable
         System.setProperty("webdriver.gecko.driver", "path/to/geckodriver");
@@ -15,47 +13,63 @@ public class SeleniumMethodsExample {
         // Initialize the Firefox driver
         WebDriver driver = new FirefoxDriver();
 
-        // Open the website
-        driver.get("http://example.com");
+        // Open the Magnus application site
+        driver.get("http://magnus.jalatechnologies.com/");
 
-        // Perform various actions
+        // Perform various actions on the Magnus application site
+
+        // Enter login credentials
+        WebElement usernameField = driver.findElement(By.id("username"));
+        WebElement passwordField = driver.findElement(By.id("password"));
+
+        usernameField.sendKeys("training@jalaacademy.com");
+        passwordField.sendKeys("jobprogram");
+
+        // Click the login button
+        WebElement loginButton = driver.findElement(By.id("loginBtn"));
+        loginButton.click();
+
+        // Wait for some time (just for demonstration, prefer using explicit or implicit waits)
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Example WebDriver methods
 
         // get()
-        String url = "http://example.com";
-        driver.get(url);
-
-        // getCurrentUrl()
-        String currentUrl = driver.getCurrentUrl();
-        System.out.println("Current URL: " + currentUrl);
+        System.out.println("Current URL: " + driver.getCurrentUrl());
 
         // getTitle()
-        String title = driver.getTitle();
-        System.out.println("Page Title: " + title);
+        System.out.println("Page Title: " + driver.getTitle());
 
         // getPageSource()
-        String pageSource = driver.getPageSource();
-        System.out.println("Page Source: " + pageSource);
+        System.out.println("Page Source: " + driver.getPageSource());
 
         // findElement()
-        WebElement element = driver.findElement(By.id("elementId"));
+        WebElement exampleElement = driver.findElement(By.id("exampleElementId"));
 
         // findElements()
-        List<WebElement> elements = driver.findElements(By.className("exampleClass"));
+        // For example, find all buttons on the page
+        driver.findElements(By.tagName("button")).forEach(WebElement::click);
 
         // getWindowHandle()
-        String windowHandle = driver.getWindowHandle();
+        String mainWindowHandle = driver.getWindowHandle();
+        System.out.println("Main Window Handle: " + mainWindowHandle);
 
         // getWindowHandles()
-        Set<String> windowHandles = driver.getWindowHandles();
+        System.out.println("All Window Handles: " + driver.getWindowHandles());
 
         // switchTo()
-        driver.switchTo().window(windowHandle);
+        driver.switchTo().window(mainWindowHandle);
 
         // manage()
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         // driver.navigate().to()
-        driver.navigate().to("http://example.com");
+        driver.navigate().to("http://magnus.jalatechnologies.com/");
 
         // driver.navigate().back()
         driver.navigate().back();
@@ -67,51 +81,36 @@ public class SeleniumMethodsExample {
         driver.navigate().refresh();
 
         // click()
-        element.click();
+        exampleElement.click();
 
         // sendKeys()
-        element.sendKeys("Hello, Selenium!");
+        exampleElement.sendKeys("Hello, Magnus!");
 
         // getAttribute()
-        String attributeValue = element.getAttribute("attributeName");
+        String attributeValue = exampleElement.getAttribute("attributeName");
 
         // getTagName()
-        String tagName = element.getTagName();
+        String tagName = exampleElement.getTagName();
 
         // getText()
-        String text = element.getText();
+        String text = exampleElement.getText();
 
         // isDisplayed()
-        boolean isDisplayed = element.isDisplayed();
+        boolean isDisplayed = exampleElement.isDisplayed();
 
         // isEnabled()
-        boolean isEnabled = element.isEnabled();
+        boolean isEnabled = exampleElement.isEnabled();
 
         // isSelected()
-        boolean isSelected = element.isSelected();
-
-        // driver.quit()
-        driver.quit();
-
-        // driver.close()
-        // Note: Use this if you want to close only the current browser window, not the entire WebDriver instance.
-        // driver.close();
-
-        // Thread.sleep()
-        try {
-            Thread.sleep(2000); // Sleep for 2 seconds
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        boolean isSelected = exampleElement.isSelected();
 
         // getSize()
-        int width = element.getSize().getWidth();
-        int height = element.getSize().getHeight();
-        System.out.println("Element Size: Width = " + width + ", Height = " + height);
+        System.out.println("Element Size: " + exampleElement.getSize());
 
         // getLocation()
-        int xCoordinate = element.getLocation().getX();
-        int yCoordinate = element.getLocation().getY();
-        System.out.println("Element Location: X = " + xCoordinate + ", Y = " + yCoordinate);
+        System.out.println("Element Location: " + exampleElement.getLocation());
+
+        // Close the browser
+        driver.quit();
     }
 }
